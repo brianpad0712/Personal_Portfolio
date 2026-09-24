@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+<!-- Rewrites the block title part created in base.html-->
+{% block title %}{{ project.title }} - {{ profile.name }}{% endblock %}
+
+{% block content %}
+    <a class="back" href="{{ root }}index.html">Back to log</a>
+
+    <article class="entry-full">
+        <p class="entry-date">{{ project.month_name }} {{ project.year }}</p>
+        <h1 class="entry-full-title">{{ project.title }}</h1>
+        <p class="entry-meta">
+            {% if project.status == 'in progress' %}<span class="status">in progress</span>{% endif %}
+            {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+        </p>
+
+        {% for paragraph in project.body %}
+            <p class="entry-paragraph">{{ paragraph }}</p>
+        {% endfor %}
+
+        {% if project.images %}
+            <div class="entry-gallery">
+                {% for image in project.images %}
+                    <figure class="gallery-item">
+                        <img src="{{ root }}static/images/{{ project.slug }}/{{ image.file }}"
+                            alt="{{ image.caption }}"
+                            loading="lazy">
+                        <figcaption>{{ image.caption }}</figcaption>
+                    </figure>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if project.links %}
+            <div class="entry-links">
+                {% for link in project.links %}
+                    <a href="{{ link.url }}">{{ link.label }} &rarr;</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+  </article>
+{% endblock %}

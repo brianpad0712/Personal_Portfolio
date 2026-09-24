@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ profile.name }}{% endblock %}</title>
+    <meta name="description" content="{{ profile.bio }}">
+    <!-- the block title and endblock will be replaced-->
+
+    <!-- href contains two typefaces, fraunces is for headlines and dates
+         IBM Plex Sans does everything else basicallu-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ root }}static/css/style.css">
+</head>
+<body>
+    
+    <!-- Sidebar: changes on mobile devices, hopefully.-->
+     <aside class="sidebar">
+        <div class="sidebar-inner">
+            <p class="name">{{ profile.name }}</p>
+            <p class="role">{{ profile.role }} &middot; {{ profile.school }}</p>
+            <p class="bio">{{ profile.bio }}</p>
+
+            <nav class="links">
+                {% for link in profile.links %}
+                    <a href="{{ link.url }}">{{ link.label }}</a>
+                {% endfor %}
+
+            </nav>
+
+
+            <!-- Checks how many projects I've put to not have bad grammar-->
+            <p class="counter">{{ project_count }} entr{{ 'y' if project_count == 1 else 'ies' }} since {{ profile.log_started }}</p>
+        </div>
+
+     </aside>
+
+     <main class="main">
+        {% block content %}{% endblock %}
+
+     </main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+    {
+        "slug": "weather-app",
+        "title": "Weather App",
+        "date": "2026-09",
+        "summary": "An application that takes a user inputted city and prints the temperature and wind speed. First project I ever created and first ever time using an API. Added an option to change the measurement of degrees printed to either fahrenheit or celsius since it originally displayed only displayed celsius.",
+
+        "images": [
+            {"file": "Weather_App.png", "caption": "Output of running my Weather App application."}
+        ],
+
+        "links": [
+            {"label": "Source", "url": "https://github.com/brianpad0712/Weather_App"}
+        ]
+
+
+    }
+]

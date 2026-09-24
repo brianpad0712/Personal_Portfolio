@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Padilla</title>
+    <meta name="description" content="Hello, I created this site as a way to visually showcase the projects I have created and ones I create in the future. Enjoy!">
+    <!-- the block title and endblock will be replaced-->
+
+    <!-- href contains two typefaces, fraunces is for headlines and dates
+         IBM Plex Sans does everything else basicallu-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    
+    <!-- Sidebar: changes on mobile devices, hopefully.-->
+     <aside class="sidebar">
+        <div class="sidebar-inner">
+            <p class="name">Brian Padilla</p>
+            <p class="role">Computer Science Student &middot; University of California, Irvine, Class of 2030</p>
+            <p class="bio">Hello, I created this site as a way to visually showcase the projects I have created and ones I create in the future. Enjoy!</p>
+
+            <nav class="links">
+                
+                    <a href="https://github.com/brianpad0712">GitHub</a>
+                
+                    <a href="https://linkedin.com/in/brian-padilla-41b920332">LinkedIn</a>
+                
+                    <a href="/static/resume.pdf">Resume</a>
+                
+
+            </nav>
+
+
+            <!-- Checks how many projects I've put to not have bad grammar-->
+            <p class="counter">1 entry since </p>
+        </div>
+
+     </aside>
+
+     <main class="main">
+        
+    <h1 class="log-heading">Log</h1>
+
+    <!-- years is a list of {year, entries} groups, newest year first,
+       built in build.py so the template just loops and prints. -->
+    
+        <section class="year-group">
+        <h2 class="year-label">2026</h2>
+
+        
+            <article class="entry">
+            <p class="entry-date">September</p>
+            <div class="entry-body">
+                <h3 class="entry-title">
+                    <a href="projects/weather-app.html">Weather App</a>
+                </h3>
+                <p class="entry-summary">An application that takes a user inputted city and prints the temperature and wind speed. First project I ever created and first ever time using an API. Added an option to change the measurement of degrees printed to either fahrenheit or celsius since it originally displayed only displayed celsius.</p>
+                <p class="entry-meta">
+                </p>
+            </div>
+        </article>
+      
+    </section>
+  
+
+
+     </main>
+</body>
+</html>

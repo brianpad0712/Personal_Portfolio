@@ -1,0 +1,225 @@
+:root{
+    --white: white;
+    --black: black;
+    --grey: rgb(49, 48, 48);
+    --green: rgb(10, 76, 10);
+    --orange: orange;
+    --border: rgb(208, 199, 199);
+
+
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+
+
+}
+
+* { box-sizing: border-box}
+
+html { scroll-behavior: smooth;}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Respect people who've asked their OS to reduce motion. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+a:hover, a:focus-visible { border-color: var(--green); }
+a:focus-visible { outline: 2px solid var(--moss); outline-offset: 2px; }
+
+
+.sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: 280px;
+  padding: 3rem 2rem;
+  border-right: 1px solid var(--green);
+  overflow-y: auto;
+}
+
+.mark {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+
+.role {
+  margin: 0 0 1.25rem;
+  color: var(--grey);
+  font-size: 0.9rem;
+}
+
+.bio {
+  font-size: 0.92rem;
+  color: var(--grey);
+  max-width: 32ch;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1.5rem 0;
+}
+.links a { color: var(--black); width: fit-content; }
+.links a:hover { color: var(--green); }
+
+.counter {
+  font-size: 0.8rem;
+  color: var(--orange);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--white);
+}
+
+.main {
+  margin-left: 280px;
+  max-width: 680px;
+  padding: 3.5rem 3rem 6rem;
+}
+
+@media (max-width: 860px) {
+  .sidebar {
+    position: static;
+    width: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--white);
+    padding: 2rem 1.5rem;
+  }
+  .main { margin-left: 0; padding: 2.5rem 1.5rem 4rem; max-width: none; }
+  .bio { max-width: none; }
+}
+
+
+.log-heading {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 2rem;
+}
+
+.year-group { margin-bottom: 2.5rem; }
+
+.year-label {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--orange);
+  margin: 0 0 1rem;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--white);
+}
+.year-group .entry:first-child { border-top: none; }
+
+.entry-date {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+.entry-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+.entry-title a { color: var(--black); border-bottom: none; }
+.entry-title a:hover { color: var(--green); }
+
+.entry-summary {
+  margin: 0 0 0.6rem;
+  color: var(--grey);
+  max-width: 60ch;
+}
+
+.entry-meta { margin: 0; font-size: 0.78rem; }
+.tag, .status {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.15rem 0.55rem;
+  border: 1px solid var(--white);
+  border-radius: 3px;
+  color: var(--grey);
+}
+.status { border-color: var(--green); color: var(--green); }
+
+
+.back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--grey);
+  border-bottom: none;
+}
+.back:hover { color: var(--green); }
+
+.entry-full-title {
+  font-family: var(--serif);
+  font-size: 2.1rem;
+  font-weight: 500;
+  margin: 0.4rem 0 0.75rem;
+}
+
+.entry-paragraph { max-width: 62ch; }
+
+.entry-links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--white);
+}
+
+/* ---------------------------------------------------------------
+   IMAGES
+----------------------------------------------------------------- */
+.entry-thumb {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+
+.entry-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: block;
+}
+
+.gallery-item figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--grey);
+}

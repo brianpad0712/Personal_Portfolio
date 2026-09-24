@@ -1,0 +1,13 @@
+{
+    "name": "Brian Padilla",
+    "role": "Computer Science Student",
+    "school": "University of California, Irvine, Class of 2030",
+    "bio": "Hello, I created this site as a way to visually showcase the projects I have created and ones I create in the future. Enjoy!",
+    "email": "brianpadilla.ca@gmail.com",
+    "links": [
+        {"label": "GitHub", "url": "https://github.com/brianpad0712" },
+        {"label": "LinkedIn", "url": "https://linkedin.com/in/brian-padilla-41b920332" },
+        {"label": "Resume", "url": "/static/resume.pdf" }
+    ],
+    "started": "09-15-2026"
+}

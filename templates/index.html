@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="log-heading">Log</h1>
+
+    <!-- years is a list of {year, entries} groups, newest year first,
+       built in build.py so the template just loops and prints. -->
+    {% for year_group in years %}
+        <section class="year-group">
+        <h2 class="year-label">{{ year_group.year }}</h2>
+
+        {% for project in year_group.entries %}
+            <article class="entry">
+            <p class="entry-date">{{ project.month_name }}</p>
+            <div class="entry-body">
+                <h3 class="entry-title">
+                    <a href="{{ root }}projects/{{ project.slug }}.html">{{ project.title }}</a>
+                </h3>
+                <p class="entry-summary">{{ project.summary }}</p>
+                <p class="entry-meta">
+                </p>
+            </div>
+        </article>
+      {% endfor %}
+    </section>
+  {% endfor %}
+{% endblock %}
+
+
+
